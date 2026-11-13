@@ -1,0 +1,9 @@
+.DS_Store
+.idea/
+.claude/
+.tclaude-docker.*
+.task.txt
+task.pdf
+sources/
+results.bak
+__pycache__/
