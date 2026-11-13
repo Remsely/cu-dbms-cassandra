@@ -6,25 +6,36 @@ TRACING set to ON
 
 (0 rows)
 
-Tracing session: 94200090-dd30-11f1-a261-efc69bf99237
+Tracing session: 0a172650-df90-11f1-b0ef-e513b7ed2429
 
- activity                                                                                                        | timestamp                  | source     | source_elapsed | client
------------------------------------------------------------------------------------------------------------------+----------------------------+------------+----------------+-----------
-                                                                                              Execute CQL3 query | 2026-11-10 18:00:13.851000 | 172.18.0.3 |              0 | 127.0.0.1
- Parsing SELECT event_time, event_type FROM hw3.user_actions WHERE user_id = 3001; [Native-Transport-Requests-9] | 2026-11-10 18:00:13.854000 | 172.18.0.3 |           3816 | 127.0.0.1
-                                                               Preparing statement [Native-Transport-Requests-9] | 2026-11-10 18:00:13.855000 | 172.18.0.3 |           4350 | 127.0.0.1
-                                                reading data from /172.18.0.4:7000 [Native-Transport-Requests-9] | 2026-11-10 18:00:13.856000 | 172.18.0.3 |           5343 | 127.0.0.1
-                 Sending READ_REQ message to c2/172.18.0.4:7000 message size 114 bytes [Messaging-EventLoop-3-4] | 2026-11-10 18:00:13.856001 | 172.18.0.3 |           5889 | 127.0.0.1
-                                       READ_REQ message received from /172.18.0.3:7000 [Messaging-EventLoop-3-2] | 2026-11-10 18:00:13.861000 | 172.18.0.4 |            683 | 127.0.0.1
-                                                  Executing single-partition query on user_actions [ReadStage-3] | 2026-11-10 18:00:13.864000 | 172.18.0.4 |           4369 | 127.0.0.1
-                                                                      Acquiring sstable references [ReadStage-3] | 2026-11-10 18:00:13.864001 | 172.18.0.4 |           4501 | 127.0.0.1
-                         Skipped 0/0 non-slice-intersecting sstables, included 0 due to tombstones [ReadStage-3] | 2026-11-10 18:00:13.864002 | 172.18.0.4 |           4643 | 127.0.0.1
-                                                         Merged data from memtables and 0 sstables [ReadStage-3] | 2026-11-10 18:00:13.865000 | 172.18.0.4 |           5160 | 127.0.0.1
-                                                            Read 0 live rows and 6 tombstone cells [ReadStage-3] | 2026-11-10 18:00:13.865001 | 172.18.0.4 |           5223 | 127.0.0.1
-                                                            Enqueuing response to /172.18.0.3:7000 [ReadStage-3] | 2026-11-10 18:00:13.865002 | 172.18.0.4 |           5255 | 127.0.0.1
-                 Sending READ_RSP message to c1/172.18.0.3:7000 message size 122 bytes [Messaging-EventLoop-3-4] | 2026-11-10 18:00:13.865003 | 172.18.0.4 |           5446 | 127.0.0.1
-                                       READ_RSP message received from /172.18.0.4:7000 [Messaging-EventLoop-3-1] | 2026-11-10 18:00:13.866000 | 172.18.0.3 |          15361 | 127.0.0.1
-                                             Processing response from /172.18.0.4:7000 [RequestResponseStage-15] | 2026-11-10 18:00:13.866001 | 172.18.0.3 |          15689 | 127.0.0.1
-                                                                                                Request complete | 2026-11-10 18:00:13.867094 | 172.18.0.3 |          16094 | 127.0.0.1
+ activity                                                                                                                   | timestamp                  | source     | source_elapsed | client
+----------------------------------------------------------------------------------------------------------------------------+----------------------------+------------+----------------+-----------
+                                                                                                         Execute CQL3 query | 2026-11-13 18:28:36.277000 | 172.18.0.3 |              0 | 127.0.0.1
+            Parsing SELECT event_time, event_type FROM hw3.user_actions WHERE user_id = 3001; [Native-Transport-Requests-5] | 2026-11-13 18:28:36.277001 | 172.18.0.3 |            163 | 127.0.0.1
+                                                                          Preparing statement [Native-Transport-Requests-5] | 2026-11-13 18:28:36.277002 | 172.18.0.3 |            296 | 127.0.0.1
+                                                           reading data from /172.18.0.2:7000 [Native-Transport-Requests-5] | 2026-11-13 18:28:36.278000 | 172.18.0.3 |            511 | 127.0.0.1
+                                                  READ_REQ message received from /172.18.0.3:7000 [Messaging-EventLoop-3-9] | 2026-11-13 18:28:36.278000 | 172.18.0.2 |             26 | 127.0.0.1
+                            Sending READ_REQ message to c3/172.18.0.2:7000 message size 114 bytes [Messaging-EventLoop-3-1] | 2026-11-13 18:28:36.278001 | 172.18.0.3 |            700 | 127.0.0.1
+                                                             Executing single-partition query on user_actions [ReadStage-1] | 2026-11-13 18:28:36.278001 | 172.18.0.2 |            219 | 127.0.0.1
+ speculating read retry on Full(/172.18.0.3:7000,(-1936415375782138039,-1668273133962180559]) [Native-Transport-Requests-5] | 2026-11-13 18:28:36.278002 | 172.18.0.3 |           1067 | 127.0.0.1
+                                                                                 Acquiring sstable references [ReadStage-1] | 2026-11-13 18:28:36.278002 | 172.18.0.2 |            252 | 127.0.0.1
+                             Sending READ_REQ message to /172.18.0.3:7000 message size 114 bytes [Messaging-EventLoop-3-13] | 2026-11-13 18:28:36.278003 | 172.18.0.3 |           1195 | 127.0.0.1
+                                                 READ_REQ message received from /172.18.0.3:7000 [Messaging-EventLoop-3-16] | 2026-11-13 18:28:36.279000 | 172.18.0.3 |           1537 | 127.0.0.1
+                                    Skipped 0/0 non-slice-intersecting sstables, included 0 due to tombstones [ReadStage-1] | 2026-11-13 18:28:36.279000 | 172.18.0.2 |            290 | 127.0.0.1
+                                                             Executing single-partition query on user_actions [ReadStage-4] | 2026-11-13 18:28:36.279001 | 172.18.0.3 |           1747 | 127.0.0.1
+                                                                    Merged data from memtables and 0 sstables [ReadStage-1] | 2026-11-13 18:28:36.279001 | 172.18.0.2 |            368 | 127.0.0.1
+                                                                                 Acquiring sstable references [ReadStage-4] | 2026-11-13 18:28:36.279002 | 172.18.0.3 |           1775 | 127.0.0.1
+                                                                      Read 0 live rows and 10 tombstone cells [ReadStage-1] | 2026-11-13 18:28:36.279002 | 172.18.0.2 |            409 | 127.0.0.1
+                                    Skipped 0/0 non-slice-intersecting sstables, included 0 due to tombstones [ReadStage-4] | 2026-11-13 18:28:36.279003 | 172.18.0.3 |           1808 | 127.0.0.1
+                                                                       Enqueuing response to /172.18.0.3:7000 [ReadStage-1] | 2026-11-13 18:28:36.279003 | 172.18.0.2 |            451 | 127.0.0.1
+                                                 READ_RSP message received from /172.18.0.2:7000 [Messaging-EventLoop-3-10] | 2026-11-13 18:28:36.279004 | 172.18.0.3 |           1893 | 127.0.0.1
+                            Sending READ_RSP message to c1/172.18.0.3:7000 message size 233 bytes [Messaging-EventLoop-3-1] | 2026-11-13 18:28:36.279004 | 172.18.0.2 |            631 | 127.0.0.1
+                                                                    Merged data from memtables and 0 sstables [ReadStage-4] | 2026-11-13 18:28:36.279005 | 172.18.0.3 |           1904 | 127.0.0.1
+                                                                      Read 0 live rows and 10 tombstone cells [ReadStage-4] | 2026-11-13 18:28:36.279006 | 172.18.0.3 |           1947 | 127.0.0.1
+                                                                       Enqueuing response to /172.18.0.3:7000 [ReadStage-4] | 2026-11-13 18:28:36.279007 | 172.18.0.3 |           1986 | 127.0.0.1
+                                                         Processing response from /172.18.0.2:7000 [RequestResponseStage-1] | 2026-11-13 18:28:36.279008 | 172.18.0.3 |           2154 | 127.0.0.1
+                             Sending READ_RSP message to /172.18.0.3:7000 message size 233 bytes [Messaging-EventLoop-3-13] | 2026-11-13 18:28:36.279009 | 172.18.0.3 |           2246 | 127.0.0.1
+                                                 READ_RSP message received from /172.18.0.3:7000 [Messaging-EventLoop-3-16] | 2026-11-13 18:28:36.280000 | 172.18.0.3 |             30 | 127.0.0.1
+                                                         Processing response from /172.18.0.3:7000 [RequestResponseStage-1] | 2026-11-13 18:28:36.280001 | 172.18.0.3 |             99 | 127.0.0.1
+                                                                                                           Request complete | 2026-11-13 18:28:36.279413 | 172.18.0.3 |           2413 | 127.0.0.1
 
-TRACING set to OFF

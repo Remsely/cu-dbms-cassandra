@@ -1,4 +1,6 @@
-# DEMO
+# Демонстрация
+
+Скриншоты сделаны при предыдущем прогоне; времена могут отличаться от результатов последнего запуска. Реализация — в [solution.py](solution.py), свежие результаты — в [results](results/README.md).
 
 ## 2. Таблицы и модель данных
 
@@ -32,6 +34,8 @@ bash ops.sh tablestats
 
 ![сжатие](screenshots/05-compression.png)
 
+Значения размеров и сжатия: [user_actions](results/tablestats.txt) и [user_actions_none](results/tablestats_plain.txt).
+
 ## 6. Bloom-фильтр
 
 ![bloom](screenshots/06-bloom.png)
@@ -43,6 +47,8 @@ bash ops.sh repair
 ```
 
 ![repair](screenshots/07-repair.png)
+
+[Полный вывод repair](results/repair.txt).
 
 ## 8. TTL и компакция
 
@@ -68,6 +74,8 @@ bash ops.sh compact
 ```
 
 ![compact](screenshots/08-compact.png)
+
+[История компакции](results/compaction.txt).
 
 ## 9. Результаты
 
